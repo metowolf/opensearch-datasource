@@ -34,6 +34,9 @@ interface Props {
 export const QueryEditorForm = ({ value }: Props) => {
   const dispatch = useDispatch();
   const nextId = useNextId();
+  if (!value.queryType) {
+    value.queryType = QueryType.Lucene;
+  }
 
   return (
     <>
